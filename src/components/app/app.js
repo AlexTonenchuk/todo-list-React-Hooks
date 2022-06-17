@@ -1,14 +1,15 @@
 import React , { useState } from "react";
-import AppHeader from "../app-header"
+import AppHeader from "../app-header";
 import ItemAddForm from "../item-add-form";
-import TodoList from "../todo-list"
+import TodoList from "../todo-list";
+import AppFooter from "../app-footer/app-footer";
 
 export default function App (){
     const [items, setItems] = useState(                        
         [
-            { id: 1, label: 'Drink Coffee', done: false },
-            { id: 2, label: 'Learn React', done: false },
-            { id: 3, label: 'Make Awesome App', done: false }
+            { id: 1, label: 'Make summary', done: false },
+            { id: 2, label: 'Make todo App', done: false },
+            { id: 3, label: 'Apply for a good job', done: false }
           ]
     );
           
@@ -21,11 +22,14 @@ export default function App (){
         });
     };
 
+    const itemsLeft= items.filter((item) => !item.done).length;
+   
     return(
      <div>
          <AppHeader/>
          <ItemAddForm/>
          <TodoList items={items} togleDone={togleDone} />
+         <AppFooter itemsLeft={itemsLeft} />
      </div>
     )
 };
