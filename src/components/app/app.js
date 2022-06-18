@@ -1,7 +1,9 @@
 import React , { useState } from "react";
 import ItemAddForm from "../item-add-form/item-add-form";
-import TodoList from "../todo-list";
+import TodoList from "../todo-list/todo-list";
 import AppFooter from "../app-footer/app-footer";
+
+import "./app.css"
 
 export default function App (){
 
@@ -9,10 +11,10 @@ export default function App (){
 
     const [items, setItems] = useState(                        
         [
-            { id: 1, label: 'Make summary', done: false },
-            { id: 2, label: 'Make todo App', done: false },
-            { id: 3, label: 'Apply for a good job', done: false },
-            { id: 4, label: 'Do sport', done: false },
+            { id: 1, label: 'Тестовое задание', done: false },
+            { id: 2, label: 'Прекрасный код', done: false },
+            { id: 3, label: 'Покрытие тестами', done: false },
+            { id: 4, label: 'Еще что-нибудь', done: false },
         ]
     );
 
@@ -89,23 +91,25 @@ export default function App (){
 
   
     return (
-        <div>
-            <div>
+        <div className='app'>
+            <div className="header" >
                 todos
             </div>
-            <ItemAddForm
-                onAddItem={onAddItem}
-            />
-            <TodoList  
-                items={filterItems(items, filter)} 
-                togleDone={onTogleDone}
-            />
-            <AppFooter 
-                itemsLeft={calculateItemsLeft(items)}
-                selectedfilter={filter}
-                onFilter={onFilter}
-                onClick={onClick}
-            />
+            <div className='wrap'>
+                <ItemAddForm
+                    onAddItem={onAddItem}
+                />
+                <TodoList  
+                    items={filterItems(items, filter)} 
+                    togleDone={onTogleDone}
+                />
+                <AppFooter 
+                    itemsLeft={calculateItemsLeft(items)}
+                    selectedfilter={filter}
+                    onFilter={onFilter}
+                    onClick={onClick}
+                />
+            </div>
         </div>
     )
 };

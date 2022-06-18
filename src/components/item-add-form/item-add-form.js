@@ -16,7 +16,7 @@ export default function ItemAddForm ({onAddItem}){
     };
 
     return (
-        <form 
+        <form className="itemAddForm"
             onSubmit={onSubmit}>
             <input 
                 type="text" 

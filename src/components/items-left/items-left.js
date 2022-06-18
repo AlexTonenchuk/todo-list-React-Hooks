@@ -3,7 +3,7 @@ import './items-left.css';
 
 export default function ItemsLeft ({itemsLeft}){
     return (
-        <span >
+        <span className="itemsLeft" >
             {itemsLeft + ' items left'}
         </span>
     );

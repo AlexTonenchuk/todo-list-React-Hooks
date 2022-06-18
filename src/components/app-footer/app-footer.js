@@ -6,7 +6,7 @@ import ClearCompleted from "../clear-completed/clear-completed"
 
 export default function AppFooter({itemsLeft, onFilter, selectedfilter, onClick}){
     return (
-        <div>
+        <div className='appFooter'>
             <ItemsLeft 
                 itemsLeft={itemsLeft} 
             />

@@ -5,7 +5,8 @@ export default function ItemStatusFilter ({onFilter, selectedfilter}){
     
     
     return (
-        <span onClick={onFilter}>
+        <div className="itemStatusFilter"
+            onClick={onFilter}>
             <button 
                 value='all' 
                 className={selectedfilter==='all'?'pressed':''}>
@@ -21,7 +22,7 @@ export default function ItemStatusFilter ({onFilter, selectedfilter}){
                 className={selectedfilter==='completed'?'pressed':''}>
                 Completed
             </button>
-        </span>
+        </div>
     );
 };
 
