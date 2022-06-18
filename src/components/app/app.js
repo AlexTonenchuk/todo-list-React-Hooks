@@ -1,5 +1,4 @@
 import React , { useState } from "react";
-import AppHeader from "../app-header";
 import ItemAddForm from "../item-add-form/item-add-form";
 import TodoList from "../todo-list";
 import AppFooter from "../app-footer/app-footer";
@@ -91,7 +90,9 @@ export default function App (){
   
     return (
         <div>
-            <AppHeader/>
+            <div>
+                todos
+            </div>
             <ItemAddForm
                 onAddItem={onAddItem}
             />
