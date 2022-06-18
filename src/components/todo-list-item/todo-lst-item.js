@@ -6,7 +6,7 @@ export default function TodoListItem ({ done, label, togleDone}) {
     if (done===true){ classNames="dones"};
     return (
         <span>
-            <input type="checkbox" onClick={togleDone}/>
+            <input type="checkbox" checked={done?'checked':''} onChange={togleDone}/>
             <span className={classNames}>{label}</span>
         </span>
     );

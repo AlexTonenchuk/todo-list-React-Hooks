@@ -1,13 +1,13 @@
 import React from "react";
 import "./app-footer.css";
 import ItemsLeft from "../items-left/items-left";
+import ItemStatusFilter from "../item-status-filter/item-status-filter";
 
-export default function AppFooter({itemsLeft}){
+export default function AppFooter({itemsLeft, onFilter}){
     return (
         <div>
-            <span>
                 <ItemsLeft itemsLeft={itemsLeft} />
-            </span>
+                <ItemStatusFilter onFilter={onFilter} />
         </div>
     )
 };
