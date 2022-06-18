@@ -1,12 +1,26 @@
 import React from "react";
 import "./item-status-filter.css"
 
-export default function ItemStatusFilter ({onFilter}){
+export default function ItemStatusFilter ({onFilter, selectedfilter}){
+    
+    
     return (
         <span onClick={onFilter}>
-            <button value='all'>All</button>
-            <button value='active'>Active</button>
-            <button value='completed'>Completed</button>
+            <button 
+                value='all' 
+                className={selectedfilter==='all'?'pressed':''}>
+                All
+            </button>
+            <button 
+                value='active'
+                className={selectedfilter==='active'?'pressed':''}>
+                Active
+            </button>
+            <button 
+                value='completed'
+                className={selectedfilter==='completed'?'pressed':''}>
+                Completed
+            </button>
         </span>
     );
 };

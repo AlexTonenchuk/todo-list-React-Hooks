@@ -76,7 +76,8 @@ export default function App (){
                 togleDone={onTogleDone}
             />
             <AppFooter 
-                itemsLeft={calculateItemsLeft(items)} 
+                itemsLeft={calculateItemsLeft(items)}
+                selectedfilter={filter}
                 onFilter={onFilter} 
             />
         </div>
