@@ -1,10 +1,29 @@
-import React from "react";
+import React, {useState}  from "react";
 import './item-add-form.css';
 
-export default function ItemAddForm (){
+export default function ItemAddForm ({onAddItem}){
+    
+    const [inputValue, setInputValue] = useState ('');
+
+    const onChange=(e)=>{
+        setInputValue(()=>{return e.target.value})
+    };
+
+    const onSubmit=(e)=>{
+        e.preventDefault();
+        onAddItem(inputValue);
+        setInputValue('')
+    };
+
     return (
-        <form>
-            <input type="text" placeholder="What needs to be done?" />
+        <form 
+            onSubmit={onSubmit}>
+            <input 
+                type="text" 
+                placeholder="What needs to be done?"
+                value={inputValue}
+                onChange={onChange}
+            />
         </form>
     );
 };

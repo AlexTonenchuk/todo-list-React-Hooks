@@ -1,9 +1,8 @@
 import React , { useState } from "react";
 import AppHeader from "../app-header";
-import ItemAddForm from "../item-add-form";
+import ItemAddForm from "../item-add-form/item-add-form";
 import TodoList from "../todo-list";
 import AppFooter from "../app-footer/app-footer";
-
 
 export default function App (){
 
@@ -19,6 +18,8 @@ export default function App (){
     );
 
     const [filter, setFilter] = useState('all');
+
+    const [idAddedItem, setIdAddedItem] = useState(100);
 
     
     //handlers:
@@ -39,8 +40,22 @@ export default function App (){
         });
     }
 
+    const onAddItem=(inputValue)=>{
+        setItems((items)=>{
+            const newArray=[...items, {id: idAddedItem,
+                                       label: inputValue,
+                                       done: false,  
+                                      }
+            ];
+            setIdAddedItem((idAddedItem)=>++idAddedItem)
+            return newArray;
+        });
+    };
+
 
     // computed data:
+
+    
 
     const calculateItemsLeft =(items)=>{
         const arrayItemsLeft=items.filter((item) =>!item.done)
@@ -70,7 +85,9 @@ export default function App (){
     return (
         <div>
             <AppHeader/>
-            <ItemAddForm/>
+            <ItemAddForm
+                onAddItem={onAddItem}
+            />
             <TodoList  
                 items={filterItems(items, filter)} 
                 togleDone={onTogleDone}
