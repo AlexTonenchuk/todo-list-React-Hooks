@@ -52,6 +52,13 @@ export default function App (){
         });
     };
 
+    const onClick=()=>{
+        setItems((items)=>{
+            const newArray=items.filter((item)=>item.done===false);
+            return newArray;
+        })
+    };
+
 
     // computed data:
 
@@ -95,7 +102,8 @@ export default function App (){
             <AppFooter 
                 itemsLeft={calculateItemsLeft(items)}
                 selectedfilter={filter}
-                onFilter={onFilter} 
+                onFilter={onFilter}
+                onClick={onClick}
             />
         </div>
     )

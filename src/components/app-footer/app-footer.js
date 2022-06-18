@@ -2,8 +2,9 @@ import React from "react";
 import "./app-footer.css";
 import ItemsLeft from "../items-left/items-left";
 import ItemStatusFilter from "../item-status-filter/item-status-filter";
+import ClearCompleted from "../clear-completed/clear-completed"
 
-export default function AppFooter({itemsLeft, onFilter, selectedfilter}){
+export default function AppFooter({itemsLeft, onFilter, selectedfilter, onClick}){
     return (
         <div>
             <ItemsLeft 
@@ -12,6 +13,9 @@ export default function AppFooter({itemsLeft, onFilter, selectedfilter}){
             <ItemStatusFilter 
                 onFilter={onFilter} 
                 selectedfilter={selectedfilter} 
+            />
+            <ClearCompleted
+                onClick={onClick}
             />
         </div>
     )
