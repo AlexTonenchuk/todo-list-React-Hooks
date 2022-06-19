@@ -5,10 +5,15 @@ export default function TodoListItem ({ done, label, togleDone}) {
     let classNames=' ';
     if (done===true){ classNames="dones"};
     return (
-        <span className="todoList">
-            <input type="checkbox" checked={done?'checked':''} onChange={togleDone}/>
+        <label className="todoList">
+            <input 
+                className="checkbox"
+                type="checkbox" 
+                checked={done?'checked':''} 
+                onChange={togleDone}
+            />
             <span className={classNames}>{label}</span>
-        </span>
+        </label>
     );
 };
 

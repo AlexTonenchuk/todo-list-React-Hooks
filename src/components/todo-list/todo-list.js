@@ -4,16 +4,16 @@ import TodoListItem from "../todo-list-item/todo-lst-item";
 
 export default function TodoList ({items, togleDone}) {
 
-//console.log(itemss)
     const elements = items.map(
         (item) => {
             const {id, ...itemProps} = item;
             return (
-            <li key={id} >
-                <TodoListItem togleDone={()=>togleDone(id)}
-                {...itemProps}
-                />
-            </li>
+                <li key={id} >
+                    <TodoListItem 
+                        togleDone={()=>togleDone(id)}
+                        {...itemProps}
+                    />
+                </li>
             );
         }
     );

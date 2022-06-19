@@ -3,7 +3,7 @@ import ItemAddForm from "../item-add-form/item-add-form";
 import TodoList from "../todo-list/todo-list";
 import AppFooter from "../app-footer/app-footer";
 
-import "./app.css"
+import "./app.css";
 
 export default function App (){
 
@@ -21,7 +21,6 @@ export default function App (){
     const [filter, setFilter] = useState('all');
 
     const [idAddedItem, setIdAddedItem] = useState(100);
-
     
     //handlers:
 
@@ -60,11 +59,8 @@ export default function App (){
         })
     };
 
-
     // computed data:
-
     
-
     const calculateItemsLeft =(items)=>{
         const arrayItemsLeft=items.filter((item) =>!item.done)
         const itemsLeft=arrayItemsLeft.length;
@@ -92,10 +88,10 @@ export default function App (){
   
     return (
         <div className='app'>
-            <div className="header" >
+            <div className="appHeader" >
                 todos
             </div>
-            <div className='wrap'>
+            <div className='appWrap'>
                 <ItemAddForm
                     onAddItem={onAddItem}
                 />
@@ -113,6 +109,3 @@ export default function App (){
         </div>
     )
 };
-
-
-

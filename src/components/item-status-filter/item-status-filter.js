@@ -2,8 +2,7 @@ import React from "react";
 import "./item-status-filter.css"
 
 export default function ItemStatusFilter ({onFilter, selectedfilter}){
-    
-    
+        
     return (
         <div className="itemStatusFilter"
             onClick={onFilter}>
@@ -25,6 +24,3 @@ export default function ItemStatusFilter ({onFilter, selectedfilter}){
         </div>
     );
 };
-
-
-
