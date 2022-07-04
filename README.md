@@ -1,4 +1,4 @@
-Данное React приложение сделано в соответствии с тестовым заданием 
+todo-list сделан в соответствии с тестовым заданием 
 на вакансию Frontend intern в компанию Mindbox.
 
 Ссылка на задание: https://docs.google.com/document/d/1X9zMnAAU9vvEzdYtSEeeram8Kur5o-py5ChKlK5TIa8/edit#
